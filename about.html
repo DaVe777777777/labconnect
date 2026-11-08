@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About LabConnect</title>
+<style>
+:root{--bg:#f4faf8;--surface:#fff;--text:#13302c;--muted:#4d6b66;--primary:#0f8b78;--primary-d:#0a6a5b;--accent:#f2a900;--border:#d4e6e1;--hero1:#0f8b78;--hero2:#0b4f7a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1b19;--surface:#142825;--text:#e4f3ef;--muted:#9ebdb6;--primary:#3ccfb4;--primary-d:#7ae3cf;--accent:#ffc83d;--border:#25423d;--hero1:#0b5f52;--hero2:#0a3556}}
+:root[data-theme="dark"]{--bg:#0d1b19;--surface:#142825;--text:#e4f3ef;--muted:#9ebdb6;--primary:#3ccfb4;--primary-d:#7ae3cf;--accent:#ffc83d;--border:#25423d;--hero1:#0b5f52;--hero2:#0a3556}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--border)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surface);z-index:21}
+.nav{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
+.logo{font-weight:800;letter-spacing:.08em;color:var(--primary);text-decoration:none}
+.nav{position:relative}
+.burger{flex:none;width:44px;height:44px;border:1px solid var(--border);background:var(--bg);border-radius:10px;cursor:pointer;display:grid;place-content:center;gap:5px;padding:0}
+.burger span{display:block;width:22px;height:2.5px;background:var(--text);border-radius:2px;transition:transform .2s,opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.nav ul{display:none;position:absolute;top:100%;right:20px;width:min(320px,calc(100% - 40px));list-style:none;margin:0;padding:8px;background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.18);max-height:calc(100vh - 90px);overflow-y:auto}
+.nav ul.open{display:block}
+.nav ul a{display:block;padding:12px 14px;border-radius:8px;color:var(--text);text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.nav ul a:hover{background:var(--bg);color:var(--primary)}
+.nav a:hover{color:var(--primary)}
+.hero{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;padding:72px 0 80px;text-align:center}
+.hero h1{font-size:clamp(2.2rem,7vw,3.8rem);letter-spacing:.14em;margin:0 0 8px}
+.hero .tag{font-size:clamp(1.05rem,3vw,1.4rem);color:#ffe29a;font-weight:600;margin:0 0 16px}
+.hero p{max-width:640px;margin:0 auto 28px;opacity:.95}
+.btn{display:inline-block;background:var(--accent);color:#2a1f00;padding:12px 26px;border-radius:999px;font-weight:700;text-decoration:none}
+.btn:hover{filter:brightness(1.08)}
+section{padding:56px 0}
+h2{font-size:1.7rem;margin:0 0 16px}
+.sub{color:var(--muted);max-width:760px}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px}
+.week{border-top:5px solid var(--primary);transition:transform .15s}
+.week:hover{transform:translateY(-3px)}
+.week small{color:var(--primary);font-weight:800;letter-spacing:.12em}
+.week h3{margin:6px 0 6px;font-size:1.15rem}
+.week p{margin:0;color:var(--muted);font-size:.95rem}
+.can{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.can li{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px 14px 46px;position:relative}
+.can li::before{content:"✓";position:absolute;left:14px;top:12px;width:22px;height:22px;border-radius:50%;background:var(--primary);color:#fff;font-size:.8rem;display:grid;place-items:center}
+.quick a.card{display:block;text-decoration:none;color:inherit}
+.quick a.card:hover{border-color:var(--primary)}
+.quick strong{color:var(--primary-d);display:block;margin-bottom:4px}
+.quick span{color:var(--muted);font-size:.93rem}
+.alt{background:var(--surface);border-block:1px solid var(--border)}
+.alt .can li,.alt .card{background:var(--bg)}
+.about-h{color:var(--primary);font-weight:800;letter-spacing:.14em;font-size:.85rem;margin:0 0 8px}
+.about-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:24px 0 40px}
+.about-grid .card h3{margin:0 0 8px;color:var(--primary-d)}
+.about-grid .card p{margin:0 0 10px;color:var(--muted)}
+.about-grid .card p:last-child{margin:0}
+.steps{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:12px;counter-reset:s}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px 14px 62px;position:relative;min-height:56px;display:flex;align-items:center}
+.steps li::before{content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:var(--primary);color:#fff;font-weight:800;display:grid;place-items:center}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:32px 20px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html" style="flex:none">LABCONNECT</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="menu">
+      <li><a href="index.html">Home Page</a></li>
+      <li><a href="#top">About LabConnect</a></li>
+      <li><a href="learning-materials.html">Learning Materials</a></li>
+      <li><a href="weekly-lessons.html">Weekly Lesson Contents</a></li>
+      <li><a href="lesson-handouts.html">Lesson Handouts Page</a></li>
+      <li><a href="activities.html">Activities and Submissions Page</a></li>
+      <li><a href="quizzes.html">Weekly Quizzes Page</a></li>
+      <li><a href="announcements.html">Announcements Page</a></li>
+      <li><a href="help.html">Help and Contact Page</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero" style="padding:48px 0 52px"><div class="wrap"><h1 style="font-size:clamp(1.6rem,6vw,3rem)">ABOUT LABCONNECT</h1><p class="tag" style="margin:0">Accessible and flexible laboratory learning for Grade 10.</p></div></div>
+<section id="about"><div class="wrap">
+<div class="about-grid">
+<div class="card"><h3>What is LabConnect?</h3>
+<p>LabConnect is a web-based Science Laboratory Learning Management System developed to support accessible and flexible laboratory learning among Grade 10 learners.</p>
+<p>The platform provides a centralized space where teachers can share experiment demonstration videos, lesson handouts, laboratory instructions, activity sheets, quizzes, and announcements.</p>
+<p>It is designed to help learners continue developing their scientific knowledge and skills even when conducting laboratory experiments in a physical classroom is not always possible.</p></div>
+<div class="card"><h3>Why LabConnect?</h3>
+<p>Science is best learned not only by reading concepts but also by observing, investigating, and asking questions. However, some schools may experience limitations in laboratory equipment, materials, scheduling, or access to safe laboratory facilities.</p>
+<p>LabConnect provides another way to engage with laboratory learning through video demonstrations, guided observations, and teacher-approved hands-on activities.</p></div>
+</div>
+<h2>How to Use LabConnect</h2>
+<ol class="steps">
+<li>Choose the weekly lesson you need to study.</li>
+<li>Read the learning objectives and lesson discussion.</li>
+<li>Download the lesson handout for additional reading.</li>
+<li>Watch the experiment demonstration video.</li>
+<li>Read the experiment instructions and safety reminders.</li>
+<li>Perform the experiment only if materials are available and your teacher approves. Otherwise, complete the video observation activity.</li>
+<li>Answer the guide questions and submit your activity.</li>
+<li>Take the weekly quiz.</li>
+<li>Check announcements for reminders and deadlines.</li>
+</ol>
+</div></section>
+
+</main>
+
+<footer>LabConnect: A Web-Based Science Laboratory Learning Management System for Enhancing Accessible and Flexible Laboratory Learning</footer>
+<script>
+(function(){
+var b=document.getElementById('burger'),m=document.getElementById('menu');
+function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu')}
+b.addEventListener('click',function(e){e.stopPropagation();set(!m.classList.contains('open'))});
+m.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});
+document.addEventListener('click',function(e){if(!m.contains(e.target))set(false)});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+})();
+</script>
+</body>
+</html>

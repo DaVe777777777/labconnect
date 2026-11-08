@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Weekly Lesson Contents – LabConnect</title>
+<style>
+:root{--bg:#f4faf8;--surface:#fff;--text:#13302c;--muted:#4d6b66;--primary:#0f8b78;--primary-d:#0a6a5b;--accent:#f2a900;--border:#d4e6e1;--hero1:#0f8b78;--hero2:#0b4f7a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1b19;--surface:#142825;--text:#e4f3ef;--muted:#9ebdb6;--primary:#3ccfb4;--primary-d:#7ae3cf;--accent:#ffc83d;--border:#25423d;--hero1:#0b5f52;--hero2:#0a3556}}
+:root[data-theme="dark"]{--bg:#0d1b19;--surface:#142825;--text:#e4f3ef;--muted:#9ebdb6;--primary:#3ccfb4;--primary-d:#7ae3cf;--accent:#ffc83d;--border:#25423d;--hero1:#0b5f52;--hero2:#0a3556}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--border)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surface);z-index:21}
+.nav{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
+.logo{font-weight:800;letter-spacing:.08em;color:var(--primary);text-decoration:none}
+.nav{position:relative}
+.burger{flex:none;width:44px;height:44px;border:1px solid var(--border);background:var(--bg);border-radius:10px;cursor:pointer;display:grid;place-content:center;gap:5px;padding:0}
+.burger span{display:block;width:22px;height:2.5px;background:var(--text);border-radius:2px;transition:transform .2s,opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.nav ul{display:none;position:absolute;top:100%;right:20px;width:min(320px,calc(100% - 40px));list-style:none;margin:0;padding:8px;background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.18);max-height:calc(100vh - 90px);overflow-y:auto}
+.nav ul.open{display:block}
+.nav ul a{display:block;padding:12px 14px;border-radius:8px;color:var(--text);text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.nav ul a:hover{background:var(--bg);color:var(--primary)}
+.nav a:hover{color:var(--primary)}
+.hero{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;padding:72px 0 80px;text-align:center}
+.hero h1{font-size:clamp(2.2rem,7vw,3.8rem);letter-spacing:.14em;margin:0 0 8px}
+.hero .tag{font-size:clamp(1.05rem,3vw,1.4rem);color:#ffe29a;font-weight:600;margin:0 0 16px}
+.hero p{max-width:640px;margin:0 auto 28px;opacity:.95}
+.btn{display:inline-block;background:var(--accent);color:#2a1f00;padding:12px 26px;border-radius:999px;font-weight:700;text-decoration:none}
+.btn:hover{filter:brightness(1.08)}
+section{padding:56px 0}
+h2{font-size:1.7rem;margin:0 0 16px}
+.sub{color:var(--muted);max-width:760px}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px}
+.week{border-top:5px solid var(--primary);transition:transform .15s}
+.week:hover{transform:translateY(-3px)}
+.week small{color:var(--primary);font-weight:800;letter-spacing:.12em}
+.week h3{margin:6px 0 6px;font-size:1.15rem}
+.week p{margin:0;color:var(--muted);font-size:.95rem}
+.can{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.can li{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px 14px 46px;position:relative}
+.can li::before{content:"✓";position:absolute;left:14px;top:12px;width:22px;height:22px;border-radius:50%;background:var(--primary);color:#fff;font-size:.8rem;display:grid;place-items:center}
+.quick a.card{display:block;text-decoration:none;color:inherit}
+.quick a.card:hover{border-color:var(--primary)}
+.quick strong{color:var(--primary-d);display:block;margin-bottom:4px}
+.quick span{color:var(--muted);font-size:.93rem}
+.alt{background:var(--surface);border-block:1px solid var(--border)}
+.alt .can li,.alt .card{background:var(--bg)}
+.tabs{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-bottom:28px}
+.tab{text-align:left;background:var(--surface);color:var(--text);border:1px solid var(--border);border-top:5px solid var(--border);border-radius:12px;padding:12px 14px;cursor:pointer;font:inherit}
+.tab small{display:block;color:var(--primary);font-weight:800;letter-spacing:.12em}
+.tab span{font-weight:600;font-size:.92rem}
+.tab.on{border-top-color:var(--primary);box-shadow:0 4px 16px rgba(15,139,120,.18)}
+.panel[hidden]{display:none}
+.about-h{color:var(--primary);font-weight:800;letter-spacing:.14em;font-size:.85rem;margin:0 0 4px}
+.comp{background:var(--surface);border:1px solid var(--border);border-left:6px solid var(--accent);border-radius:12px;padding:14px 18px;margin:12px 0 20px}
+.comp b{display:block;color:var(--primary-d);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.vid h3{margin:0 0 12px;font-size:1.05rem}
+.ratio{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#000}
+.ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vl{display:inline-block;margin-top:10px;color:var(--primary-d);font-weight:600;font-size:.9rem}
+.blk{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-top:16px}
+.blk h3{display:flex;align-items:center;gap:12px;margin:0 0 12px;font-size:1.15rem}
+.lt{flex:none;width:32px;height:32px;border-radius:8px;background:var(--primary);color:#fff;display:grid;place-items:center;font-weight:800}
+.blk h4{margin:18px 0 6px;color:var(--primary-d)}
+.blk p{margin:0 0 10px}
+.blk ul,.blk ol{margin:0 0 10px;padding-left:22px}
+.blk li{margin:3px 0}
+.eq{background:var(--bg);border:1px dashed var(--primary);border-radius:10px;padding:12px 16px;font-size:1.05rem;overflow-x:auto;white-space:nowrap}
+.note{background:var(--bg);border-left:5px solid var(--accent);border-radius:8px;padding:12px 16px;margin:12px 0 0}
+.tw{overflow-x:auto;margin:6px 0 10px}
+table{border-collapse:collapse;width:100%;min-width:420px}
+th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--primary);color:#fff}
+td:empty{height:44px}
+.btn.gf{background:var(--primary);color:#fff}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:32px 20px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html" style="flex:none">LABCONNECT</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="menu">
+      <li><a href="index.html">Home Page</a></li>
+      <li><a href="about.html">About LabConnect</a></li>
+      <li><a href="learning-materials.html">Learning Materials</a></li>
+      <li><a href="#top">Weekly Lesson Contents</a></li>
+      <li><a href="lesson-handouts.html">Lesson Handouts Page</a></li>
+      <li><a href="activities.html">Activities and Submissions Page</a></li>
+      <li><a href="quizzes.html">Weekly Quizzes Page</a></li>
+      <li><a href="announcements.html">Announcements Page</a></li>
+      <li><a href="help.html">Help and Contact Page</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero" style="padding:48px 0 52px"><div class="wrap"><h1 style="font-size:clamp(1.6rem,6vw,3rem)">WEEKLY LESSON CONTENTS</h1><p class="tag" style="margin:0">Choose a week to begin your lesson.</p></div></div>
+<section><div class="wrap">
+<div class="tabs" role="tablist"><button class="tab" data-w="1"><small>WEEK 1</small><span>Chemical Reactions</span></button><button class="tab" data-w="2"><small>WEEK 2</small><span>Acids, Bases, and Salts</span></button><button class="tab" data-w="3"><small>WEEK 3</small><span>Types of Chemical Reactions</span></button><button class="tab" data-w="4"><small>WEEK 4</small><span>Chemical Equations and Conservation of Mass</span></button></div>
+<article class="panel" id="week1" hidden>
+<p class="about-h">WEEK 1</p><h2>Chemical Reactions</h2>
+<div class="comp"><b>Learning Competency</b>Describe the indicators of a chemical reaction, including gas production and temperature change.</div>
+<div class="card vid"><h3>Experiment: Observing Chemical Reactions: Vinegar and Baking Soda</h3><div class="ratio"><iframe src="https://www.youtube-nocookie.com/embed/E4ba9X9IY_s" title="Week 1 experiment video" loading="lazy" allowfullscreen></iframe></div><a class="vl" href="https://youtu.be/E4ba9X9IY_s?is=h9-DJtnc2UfEdkJG" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
+<section class="blk"><h3><span class="lt">A</span>Learning objectives</h3><p>At the end of the experiment, learners should be able to:</p><ol><li><b>Cognitive:</b> Identify gas production and temperature change as observable indicators of a chemical reaction.</li><li><b>Affective:</b> Demonstrate appreciation for the importance of careful observation and safety when conducting chemical experiments.</li><li><b>Psychomotor:</b> Perform or observe the vinegar and baking soda experiment to identify evidence of a chemical reaction.</li></ol></section><section class="blk"><h3><span class="lt">B</span>Laboratory manual</h3><h4>Introduction</h4><p>Chemical reactions occur when substances are transformed into new substances. These reactions can be recognized through observable indicators such as color change, formation of a precipitate, gas production, odor change, and temperature change.</p><p>In this experiment, vinegar (acetic acid) reacts with baking soda (sodium bicarbonate), producing carbon dioxide gas, water, and sodium acetate.</p><h4>Materials</h4><ul><li>50 mL white vinegar</li><li>1 teaspoon baking soda</li><li>Clear plastic cup</li><li>Measuring spoon</li><li>Thermometer</li><li>Stirring stick</li><li>Safety goggles</li></ul><h4>Procedure</h4><ol><li>Pour 50 mL of vinegar into a clear plastic cup.</li><li>Measure and record the initial temperature of the vinegar.</li><li>Observe and describe the appearance of the vinegar.</li><li>Add one teaspoon of baking soda to the vinegar.</li><li>Observe the reaction carefully, especially the formation of bubbles.</li><li>After the reaction has settled, measure and record the final temperature.</li><li>Complete the observation table.</li></ol><h4>Expected results</h4><ul><li>Bubbling and fizzing will occur.</li><li>Carbon dioxide gas will be released.</li><li>The temperature may decrease.</li><li>The mixture will show visible changes.</li></ul><h4>Chemical equation</h4><div class="eq">NaHCO<sub>3</sub> + CH<sub>3</sub>COOH → CH<sub>3</sub>COONa + H<sub>2</sub>O + CO<sub>2</sub></div></section><section class="blk"><h3><span class="lt">C</span>Observation table</h3><div class="tw"><table><thead><tr><th>Indicator</th><th>Observation</th></tr></thead><tbody><tr><td>Initial appearance</td><td></td></tr><tr><td>Gas production</td><td></td></tr><tr><td>Initial temperature</td><td></td></tr><tr><td>Final temperature</td><td></td></tr><tr><td>Other observations</td><td></td></tr></tbody></table></div></section><section class="blk"><h3><span class="lt">D</span>Google Form 1 – Guide Questions</h3><a class="btn gf" href="https://forms.gle/X29MjemJXN4Y2dFb6" target="_blank" rel="noopener">Open Guide Questions ↗</a></section><section class="blk"><h3><span class="lt">E</span>Google Form 2 – Weekly Quiz</h3><a class="btn gf" href="https://forms.gle/LyqaMVq33bSUfXSY8" target="_blank" rel="noopener">Open Weekly Quiz ↗</a></section></article>
+<article class="panel" id="week2" hidden>
+<p class="about-h">WEEK 2</p><h2>Acids, Bases, and Salts</h2>
+<div class="comp"><b>Learning Competency</b>Identify common acids, bases, and salts using different indicators.</div>
+<div class="card vid"><h3>Experiment: Testing Acids and Bases Using Red Cabbage Indicator</h3><div class="ratio"><iframe src="https://www.youtube-nocookie.com/embed/I18K2upEHLc" title="Week 2 experiment video" loading="lazy" allowfullscreen></iframe></div><a class="vl" href="https://youtu.be/I18K2upEHLc?is=tgrosUa1dw9FcOkK" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
+<section class="blk"><h3><span class="lt">A</span>Learning objectives</h3><p>At the end of the experiment, learners should be able to:</p><ol><li>Classify common household substances as acidic, basic, or approximately neutral based on indicator results.</li><li>Value the importance of identifying acids and bases in understanding the properties and safe use of common substances.</li><li>Prepare or observe the use of red cabbage indicator to test different solutions.</li></ol></section><section class="blk"><h3><span class="lt">B</span>Laboratory manual</h3><h4>Introduction</h4><p>Acids, bases, and salts are common chemical substances found in everyday life. Indicators are used to identify whether a solution is acidic or basic.</p><p>Red cabbage contains anthocyanin pigments that change color depending on the pH of a solution.</p><p>In this experiment, learners will use red cabbage extract to test different household solutions.</p><h4>Materials</h4><ul><li>Red cabbage extract</li><li>White vinegar</li><li>Lemon juice</li><li>Baking soda solution</li><li>Saline solution (table salt dissolved in water)</li><li>Water</li><li>Five clear cups</li><li>Droppers</li><li>Safety goggles</li></ul><h4>Procedure</h4><ol><li>Prepare red cabbage extract by soaking or crushing red cabbage leaves in warm water, then filtering the liquid.</li><li>Label five cups according to the solutions being tested.</li><li>Place approximately 10 mL of each solution into its corresponding cup.</li><li>Add approximately 5 mL of red cabbage indicator to each cup.</li><li>Observe the color produced in each solution.</li><li>Record the color changes in the observation table.</li><li>Classify each solution as acidic, basic, or approximately neutral based on the observed color.</li></ol><h4>Expected results</h4><div class="tw"><table><thead><tr><th>Substance</th><th>Expected color</th><th>Classification</th></tr></thead><tbody><tr><td>Vinegar</td><td>Pink/red</td><td>Acidic</td></tr><tr><td>Lemon juice</td><td>Pink/red</td><td>Acidic</td></tr><tr><td>Baking soda solution</td><td>Blue/green</td><td>Basic</td></tr><tr><td>Saline solution</td><td>Purple</td><td>Approximately neutral</td></tr><tr><td>Water</td><td>Purple</td><td>Neutral</td></tr></tbody></table></div><p><i>Note: Actual colors depend on the concentration and pH of each solution.</i></p><h4>Additional Lesson Discussion: Understanding Salts</h4><p>A salt is an ionic compound commonly formed through reactions involving acids and bases. Sodium chloride (NaCl), or table salt, is a familiar example.</p><p>Although sodium chloride solution is generally close to neutral, not all salts produce neutral solutions. The properties of a salt solution depend on the ions present.</p><div class="note"><b>Connection to the competency:</b> Discuss hydrochloric acid (HCl) as an example of an acid and sodium hydroxide (NaOH) as an example of a base. These should be identified through labels, formulas, and teacher-provided information rather than handled by learners in this household-material experiment.</div></section><section class="blk"><h3><span class="lt">C</span>Observation table</h3><div class="tw"><table><thead><tr><th>Substance tested</th><th>Color produced</th><th>Classification</th></tr></thead><tbody><tr><td>Vinegar</td><td></td><td></td></tr><tr><td>Lemon juice</td><td></td><td></td></tr><tr><td>Baking soda solution</td><td></td><td></td></tr><tr><td>Saline solution</td><td></td><td></td></tr><tr><td>Water</td><td></td><td></td></tr></tbody></table></div></section><section class="blk"><h3><span class="lt">D</span>Google Form 1 – Guide Questions</h3><a class="btn gf" href="https://forms.gle/9u6XSAS34Gwve1YQ9" target="_blank" rel="noopener">Open Guide Questions ↗</a></section><section class="blk"><h3><span class="lt">E</span>Google Form 2 – Weekly Quiz</h3><a class="btn gf" href="https://forms.gle/zxDVY9SCZu1WhaWM9" target="_blank" rel="noopener">Open Weekly Quiz ↗</a></section></article>
+<article class="panel" id="week3" hidden>
+<p class="about-h">WEEK 3</p><h2>Types of Chemical Reactions</h2>
+<div class="comp"><b>Learning Competency</b>Describe combination, decomposition, single replacement, and double replacement reactions.</div>
+<div class="card vid"><h3>Experiment: Formation of a Precipitate Through a Double Displacement Reaction</h3><div class="ratio"><iframe src="https://www.youtube-nocookie.com/embed/x8F0O0H7Xmc" title="Week 3 experiment video" loading="lazy" allowfullscreen></iframe></div><a class="vl" href="https://youtu.be/x8F0O0H7Xmc?is=wHgcQjmrshB8s00x" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
+<section class="blk"><h3><span class="lt">A</span>Learning objectives</h3><p>At the end of the experiment, learners should be able to:</p><ol><li>Differentiate the four common types of chemical reactions based on their characteristics.</li><li>Develop curiosity about the chemical changes that occur in everyday materials and their surroundings.</li><li>Record observations of a double displacement reaction using an observation sheet.</li></ol></section><section class="blk"><h3><span class="lt">B</span>Laboratory manual</h3><h4>Introduction</h4><p>Chemical reactions can be classified according to how substances combine, separate, or exchange components.</p><p>The four major types include:</p><ul><li>Combination reaction</li><li>Decomposition reaction</li><li>Single replacement reaction</li><li>Double replacement reaction</li></ul><p>In this activity, learners will observe a double displacement reaction through the formation of a precipitate.</p><p>A <b>precipitate</b> is an insoluble solid that forms when two solutions react.</p><h4>Materials</h4><ul><li>Epsom salt (magnesium sulfate)</li><li>Sodium carbonate (washing soda)</li><li>Water</li><li>Two clear cups</li><li>Stirring sticks</li><li>Measuring spoons</li><li>Safety goggles</li></ul><h4>Procedure</h4><ol><li>Label the two clear cups.</li><li>Pour approximately 25 mL of magnesium sulfate solution into the first cup.</li><li>Pour approximately 25 mL of sodium carbonate solution into the second cup.</li><li>Observe the initial appearance of both solutions.</li><li>Slowly pour the magnesium sulfate solution into the sodium carbonate solution.</li><li>Observe any changes in the mixture.</li><li>Look for the formation of a white solid.</li><li>Record the observations in the table.</li><li>Identify the type of chemical reaction demonstrated.</li></ol><h4>Expected results</h4><p>A white solid may form when the two solutions are combined. This solid is called a precipitate.</p><h4>Chemical equation</h4><div class="eq">MgSO<sub>4</sub>(aq) + Na<sub>2</sub>CO<sub>3</sub>(aq) → MgCO<sub>3</sub>(s) + Na<sub>2</sub>SO<sub>4</sub>(aq)</div><p>This is a double displacement reaction because the ions exchange partners, producing magnesium carbonate, a solid precipitate.</p><div class="note"><b>Safety:</b> Use small quantities, avoid inhaling powders, wear goggles, and do proper disposal.</div></section><section class="blk"><h3><span class="lt">C</span>Additional learning material</h3><p>The experiment demonstrates double displacement. To ensure that the competency covers all four reaction types, learners should also study the following examples in the lesson handout.</p><div class="tw"><table><thead><tr><th>Reaction Type</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>Combination</td><td>Two or more substances form one product.</td><td>2Mg + O<sub>2</sub> → 2MgO</td></tr><tr><td>Decomposition</td><td>One compound breaks down into simpler substances.</td><td>2H<sub>2</sub>O → 2H<sub>2</sub> + O<sub>2</sub></td></tr><tr><td>Single Replacement</td><td>One element replaces another in a compound.</td><td>Zn + 2HCl → ZnCl<sub>2</sub> + H<sub>2</sub></td></tr><tr><td>Double Replacement</td><td>Two compounds exchange ions.</td><td>AgNO<sub>3</sub> + NaCl → AgCl + NaNO<sub>3</sub></td></tr></tbody></table></div></section><section class="blk"><h3><span class="lt">D</span>Observation table</h3><div class="tw"><table><thead><tr><th>Observation</th><th>Result</th></tr></thead><tbody><tr><td>Initial appearance of solution 1</td><td></td></tr><tr><td>Initial appearance of solution 2</td><td></td></tr><tr><td>Appearance after mixing</td><td></td></tr><tr><td>Precipitate formed?</td><td></td></tr><tr><td>Type of reaction</td><td></td></tr></tbody></table></div></section><section class="blk"><h3><span class="lt">E</span>Google Form 1 – Guide Questions</h3><a class="btn gf" href="https://forms.gle/kHmHhE7rmDvqz8rZ6" target="_blank" rel="noopener">Open Guide Questions ↗</a></section><section class="blk"><h3><span class="lt">F</span>Google Form 2 – Weekly Quiz</h3><a class="btn gf" href="https://forms.gle/SsU6PEu3BF4zLKrFA" target="_blank" rel="noopener">Open Weekly Quiz ↗</a></section></article>
+<article class="panel" id="week4" hidden>
+<p class="about-h">WEEK 4</p><h2>Chemical Equations and Conservation of Mass</h2>
+<div class="comp"><b>Learning Competency</b>Recognize chemical equations, explain the rearrangement of atoms, and apply conservation of mass to chemical reactions.</div>
+<div class="card vid"><h3>Experiment: Investigation of the Conservation of Mass in a Closed System</h3><div class="ratio"><iframe src="https://www.youtube-nocookie.com/embed/RHOC44LU8Nw" title="Week 4 experiment video" loading="lazy" allowfullscreen></iframe></div><a class="vl" href="https://youtu.be/RHOC44LU8Nw?is=ZdFzX6W4Dz6W81oe" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
+<section class="blk"><h3><span class="lt">A</span>Learning objectives</h3><p>At the end of the experiment, learners should be able to:</p><ol><li>Explain the law of conservation of mass in a chemical reaction.</li><li>Demonstrate appreciation for accurate measurement and scientific evidence.</li><li>Measure and record the mass of a reaction setup before and after a chemical reaction.</li></ol></section><section class="blk"><h3><span class="lt">B</span>Laboratory manual</h3><h4>Introduction</h4><p>The Law of Conservation of Mass states that matter cannot be created or destroyed during an ordinary chemical reaction. The total mass of the reactants is equal to the total mass of the products in a closed system.</p><p>In this experiment, vinegar and baking soda will react inside a sealed resealable bag. The reaction produces carbon dioxide gas, which remains inside the system.</p><h4>Materials</h4><ul><li>20 mL white vinegar</li><li>Approximately 1 g baking soda</li><li>Erlenmeyer flask or suitable plastic bottle</li><li>Balloon</li><li>Funnel</li><li>Digital weighing scale</li><li>Safety goggles</li><li>Tray</li></ul><h4>Procedure</h4><ol><li>Pour approximately 20 mL of vinegar into the flask.</li><li>Using a funnel, place approximately 1 g of baking soda inside the balloon.</li><li>Carefully attach the balloon to the mouth of the flask without allowing the baking soda to fall into the vinegar.</li><li>Make sure the balloon is securely attached to prevent gas from escaping.</li><li>Place the entire setup on the digital weighing scale.</li><li>Record the initial mass.</li><li>Lift the balloon so the baking soda falls into the vinegar.</li><li>Observe the reaction as bubbles form and the balloon inflates.</li><li>Wait until the reaction has stopped.</li><li>Measure and record the final mass of the complete setup while the balloon remains attached.</li><li>Compare the initial and final masses.</li></ol><h4>Safety reminders</h4><ul><li>Use a flexible balloon and suitable flask or bottle.</li><li>Do not use a rigid sealed container.</li><li>Do not overfill the balloon or flask.</li><li>Keep the setup away from the face.</li></ul><h4>Expected results</h4><ul><li>Bubbles form due to carbon dioxide production.</li><li>The bag may expand slightly.</li><li>The initial and final masses should be approximately equal if the bag remains sealed.</li></ul><div class="note"><b>Safety reminder:</b> Use a flexible freezer bag, not a rigid sealed container. Do not squeeze or overfill the bag. Perform the activity under teacher supervision.</div></section><section class="blk"><h3><span class="lt">C</span>Observation table</h3><div class="tw"><table><thead><tr><th>Measurement</th><th>Result</th></tr></thead><tbody><tr><td>Initial mass</td><td>______ g</td></tr><tr><td>Final mass</td><td>______ g</td></tr><tr><td>Difference in mass</td><td>______ g</td></tr><tr><td>Did the bag expand?</td><td>Yes / No</td></tr><tr><td>Was the mass conserved?</td><td>Yes / No</td></tr></tbody></table></div><h4>Chemical equation</h4><div class="eq">NaHCO<sub>3</sub> + CH<sub>3</sub>COOH → CH<sub>3</sub>COONa + H<sub>2</sub>O + CO<sub>2</sub></div></section><section class="blk"><h3><span class="lt">D</span>Google Form 1 – Guide Questions</h3><a class="btn gf" href="https://forms.gle/NbaA98zZS5tAKQ6w5" target="_blank" rel="noopener">Open Guide Questions ↗</a></section><section class="blk"><h3><span class="lt">E</span>Google Form 2 – Weekly Quiz</h3><a class="btn gf" href="https://forms.gle/m18eBu23mL4u1ZUn6" target="_blank" rel="noopener">Open Weekly Quiz ↗</a></section></article>
+</div></section>
+</main>
+
+<footer>LabConnect: A Web-Based Science Laboratory Learning Management System for Enhancing Accessible and Flexible Laboratory Learning</footer>
+<script>
+(function(){
+var b=document.getElementById('burger'),m=document.getElementById('menu');
+function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu')}
+b.addEventListener('click',function(e){e.stopPropagation();set(!m.classList.contains('open'))});
+m.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});
+document.addEventListener('click',function(e){if(!m.contains(e.target))set(false)});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+})();
+</script>
+<script>
+(function(){
+var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+function show(n){tabs.forEach(function(t){t.classList.toggle('on',t.dataset.w==n)});panels.forEach(function(x){x.hidden=x.id!=='week'+n})}
+function fromHash(){var m=/^#week([1-4])$/.exec(location.hash);show(m?m[1]:1)}
+tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.w);try{history.replaceState(null,'','#week'+t.dataset.w)}catch(e){}})});
+window.addEventListener('hashchange',fromHash);fromHash();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lesson Handouts – LabConnect</title>
+<style>
+:root{--bg:#f4faf8;--surface:#fff;--text:#13302c;--muted:#4d6b66;--primary:#0f8b78;--primary-d:#0a6a5b;--accent:#f2a900;--border:#d4e6e1;--hero1:#0f8b78;--hero2:#0b4f7a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1b19;--surface:#142825;--text:#e4f3ef;--muted:#9ebdb6;--primary:#3ccfb4;--primary-d:#7ae3cf;--accent:#ffc83d;--border:#25423d;--hero1:#0b5f52;--hero2:#0a3556}}
+:root[data-theme="dark"]{--bg:#0d1b19;--surface:#142825;--text:#e4f3ef;--muted:#9ebdb6;--primary:#3ccfb4;--primary-d:#7ae3cf;--accent:#ffc83d;--border:#25423d;--hero1:#0b5f52;--hero2:#0a3556}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--border)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surface);z-index:21}
+.nav{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
+.logo{font-weight:800;letter-spacing:.08em;color:var(--primary);text-decoration:none}
+.nav{position:relative}
+.burger{flex:none;width:44px;height:44px;border:1px solid var(--border);background:var(--bg);border-radius:10px;cursor:pointer;display:grid;place-content:center;gap:5px;padding:0}
+.burger span{display:block;width:22px;height:2.5px;background:var(--text);border-radius:2px;transition:transform .2s,opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.nav ul{display:none;position:absolute;top:100%;right:20px;width:min(320px,calc(100% - 40px));list-style:none;margin:0;padding:8px;background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.18);max-height:calc(100vh - 90px);overflow-y:auto}
+.nav ul.open{display:block}
+.nav ul a{display:block;padding:12px 14px;border-radius:8px;color:var(--text);text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.nav ul a:hover{background:var(--bg);color:var(--primary)}
+.nav a:hover{color:var(--primary)}
+.hero{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;padding:72px 0 80px;text-align:center}
+.hero h1{font-size:clamp(2.2rem,7vw,3.8rem);letter-spacing:.14em;margin:0 0 8px}
+.hero .tag{font-size:clamp(1.05rem,3vw,1.4rem);color:#ffe29a;font-weight:600;margin:0 0 16px}
+.hero p{max-width:640px;margin:0 auto 28px;opacity:.95}
+.btn{display:inline-block;background:var(--accent);color:#2a1f00;padding:12px 26px;border-radius:999px;font-weight:700;text-decoration:none}
+.btn:hover{filter:brightness(1.08)}
+section{padding:56px 0}
+h2{font-size:1.7rem;margin:0 0 16px}
+.sub{color:var(--muted);max-width:760px}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px}
+.week{border-top:5px solid var(--primary);transition:transform .15s}
+.week:hover{transform:translateY(-3px)}
+.week small{color:var(--primary);font-weight:800;letter-spacing:.12em}
+.week h3{margin:6px 0 6px;font-size:1.15rem}
+.week p{margin:0;color:var(--muted);font-size:.95rem}
+.can{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.can li{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px 14px 46px;position:relative}
+.can li::before{content:"✓";position:absolute;left:14px;top:12px;width:22px;height:22px;border-radius:50%;background:var(--primary);color:#fff;font-size:.8rem;display:grid;place-items:center}
+.quick a.card{display:block;text-decoration:none;color:inherit}
+.quick a.card:hover{border-color:var(--primary)}
+.quick strong{color:var(--primary-d);display:block;margin-bottom:4px}
+.quick span{color:var(--muted);font-size:.93rem}
+.alt{background:var(--surface);border-block:1px solid var(--border)}
+.alt .can li,.alt .card{background:var(--bg)}
+.ho-list{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px}
+.ho,.ho-head{display:grid;grid-template-columns:100px 1fr 140px;align-items:center;gap:16px}
+.ho-head{padding:0 18px;color:var(--muted);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.ho{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px 18px}
+.wk{color:var(--primary);font-weight:800;letter-spacing:.1em}
+.fn{display:flex;align-items:center;gap:10px;font-weight:600;min-width:0}
+.fn svg{flex:none;color:var(--primary)}
+.btn.dl{background:var(--primary);color:#fff;text-align:center;padding:10px 18px}
+@media (max-width:640px){.ho-head{display:none}.ho{grid-template-columns:1fr;gap:8px}.btn.dl{width:100%}}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:32px 20px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html" style="flex:none">LABCONNECT</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="menu">
+      <li><a href="index.html">Home Page</a></li>
+      <li><a href="about.html">About LabConnect</a></li>
+      <li><a href="learning-materials.html">Learning Materials</a></li>
+      <li><a href="weekly-lessons.html">Weekly Lesson Contents</a></li>
+      <li><a href="#top">Lesson Handouts Page</a></li>
+      <li><a href="activities.html">Activities and Submissions Page</a></li>
+      <li><a href="quizzes.html">Weekly Quizzes Page</a></li>
+      <li><a href="announcements.html">Announcements Page</a></li>
+      <li><a href="help.html">Help and Contact Page</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero" style="padding:48px 0 52px"><div class="wrap"><h1 style="font-size:clamp(1.5rem,5.5vw,2.8rem);letter-spacing:.06em">Download Your Weekly Lesson Handouts</h1><p class="tag" style="margin:0">LESSON HANDOUTS PAGE</p></div></div>
+<section><div class="wrap">
+<p class="sub">Use these handouts as additional references while studying each lesson. You may download and read them using Microsoft Word or another compatible document reader.</p>
+<ul class="ho-list">
+<li class="ho-head"><span>Week</span><span>Handout filename</span><span></span></li>
+<li class="ho"><span class="wk">WEEK 1</span><span class="fn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Chemical Reactions.docx</span><a class="btn dl" href="handouts/Chemical%20Reactions.docx" download="Chemical Reactions.docx">Download</a></li>
+<li class="ho"><span class="wk">WEEK 2</span><span class="fn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Acids, Bases, and Salts.docx</span><a class="btn dl" href="handouts/Acids%2C%20Bases%2C%20and%20Salts.docx" download="Acids, Bases, and Salts.docx">Download</a></li>
+<li class="ho"><span class="wk">WEEK 3</span><span class="fn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Types of Chemical Reactions.docx</span><a class="btn dl" href="handouts/Types%20of%20Chemical%20Reactions.docx" download="Types of Chemical Reactions.docx">Download</a></li>
+<li class="ho"><span class="wk">WEEK 4</span><span class="fn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Chemical Equations and Conservation of Mass.docx</span><a class="btn dl" href="handouts/Chemical%20Equations%20and%20Conservation%20of%20Mass.docx" download="Chemical Equations and Conservation of Mass.docx">Download</a></li>
+</ul>
+<div class="card" style="margin-top:28px;border-left:6px solid var(--accent)"><h3 style="margin:0 0 8px;color:var(--primary-d)">What’s inside each handout?</h3><p style="margin:0;color:var(--muted)">Each handout contains the lesson discussion, learning competencies, objectives, key terms, examples, experiment instructions, practice questions, and a lesson summary. Use these materials to review the concepts before completing your weekly activity and quiz.</p></div>
+</div></section>
+</main>
+
+<footer>LabConnect: A Web-Based Science Laboratory Learning Management System for Enhancing Accessible and Flexible Laboratory Learning</footer>
+<script>
+(function(){
+var b=document.getElementById('burger'),m=document.getElementById('menu');
+function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu')}
+b.addEventListener('click',function(e){e.stopPropagation();set(!m.classList.contains('open'))});
+m.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});
+document.addEventListener('click',function(e){if(!m.contains(e.target))set(false)});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+})();
+</script>
+</body>
+</html>
