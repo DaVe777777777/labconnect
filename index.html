@@ -15,9 +15,8 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",syst
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--border)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surface);z-index:21}
-.nav{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
+.nav{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px;position:relative}
 .logo{font-weight:800;letter-spacing:.08em;color:var(--primary);text-decoration:none}
-.nav{position:relative}
 .burger{flex:none;width:44px;height:44px;border:1px solid var(--border);background:var(--bg);border-radius:10px;cursor:pointer;display:grid;place-content:center;gap:5px;padding:0}
 .burger span{display:block;width:22px;height:2.5px;background:var(--text);border-radius:2px;transition:transform .2s,opacity .2s}
 .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
@@ -30,7 +29,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .nav a:hover{color:var(--primary)}
 .hero{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;padding:72px 0 80px;text-align:center}
 .hero h1{font-size:clamp(2.2rem,7vw,3.8rem);letter-spacing:.14em;margin:0 0 8px}
-.hero .tag{font-size:clamp(1.05rem,3vw,1.4rem);color:#ffe29a;font-weight:600;margin:0 0 16px}
+.hero .tag {
+  font-size: clamp(1.05rem, 3vw, 1.4rem);
+  color: #ffe29a;
+  font-weight: 600;
+  margin: 0 auto 16px auto; 
+  text-align: center;       
+  display: table;           
+}
 .hero p{max-width:640px;margin:0 auto 28px;opacity:.95}
 .btn{display:inline-block;background:var(--accent);color:#2a1f00;padding:12px 26px;border-radius:999px;font-weight:700;text-decoration:none}
 .btn:hover{filter:brightness(1.08)}
